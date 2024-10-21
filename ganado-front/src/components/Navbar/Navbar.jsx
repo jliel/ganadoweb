@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 export const Navbar = () => {
   const [show, setshow] = useState(true);
   const [showed, setshowed] = useState("");
@@ -15,11 +17,13 @@ export const Navbar = () => {
     setshowedDrop(showDrop ? "show" : "");
   };
 
+  
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
         <a className="navbar-brand" href="#">
-          Navbar
+          Charolais
         </a>
         <button
           className="navbar-toggler"
@@ -37,12 +41,12 @@ export const Navbar = () => {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link" href="#">
-                Home <span className="sr-only">(current)</span>
-              </a>
+                Inicio <span className="sr-only">(current)</span>
+              </a> 
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Link
+                Ganado
               </a>
             </li>
             <li className="nav-item dropdown">
