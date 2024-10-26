@@ -1,10 +1,19 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import { Navbar } from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
 
 const Ganado = () => {
   return (
-    <div><h1>Ganado</h1>
-    <Outlet/></div>
+    <>
+      <Navbar/>
+      <div className='container mt-3'>
+        <h2>Control de Ganado</h2>
+        <Outlet/>
+
+      </div>
+      <Footer />
+    </>
   )
 }
 

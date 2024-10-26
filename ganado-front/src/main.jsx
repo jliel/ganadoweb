@@ -20,26 +20,24 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/ganado",
+    element: <Ganado />,
     children: [
       {
-        path: "/ganado",
-        element: <Ganado />,
-        children: [
-          {
-            path: "/ganado/listado",
-            element: <Listado/>
-          },
-          {
-            path: "/ganado/agregar",
-            element: <Agregar/>
-          },
-          {
-            path: "/ganado/editar/:id",
-            element: <Editar/>
-          },
-        ]
+        path: "/ganado/listado",
+        element: <Listado/>
       },
-    ],
+      {
+        path: "/ganado/agregar",
+        element: <Agregar/>
+      },
+      {
+        path: "/ganado/editar/:id",
+        element: <Editar/>
+      },
+    ]
   },
   {
     path: "/login",
@@ -49,7 +47,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
 );
