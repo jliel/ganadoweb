@@ -14,6 +14,8 @@ import Ganado from "./pages/Ganado/Ganado.jsx";
 import Listado from "./pages/Ganado/Listado.jsx";
 import Agregar from "./pages/Ganado/Agregar.jsx";
 import Editar from "./pages/Ganado/Editar.jsx";
+import Corrales from "./pages/Corrales/Corrales.jsx";
+import ListadoCorral from "./pages/Corrales/ListadoCorral.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,11 +43,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/corrales",
-    element: <Ganado />,
+    element: <Corrales />,
     children: [
       {
         path: "/corrales/listado",
-        element: <Listado/>
+        element: <ListadoCorral/>
       },
       {
         path: "/corrales/agregar",
