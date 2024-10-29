@@ -35,42 +35,89 @@ export const Navbar = () => {
       ],
     },
     {
-      name: "Ventas",
+      name: "Corrales",
       type: "drop",
-      link: "/ganado",
+      link: "/corrales",
       extras: [
         {
           name: "Listado",
           type: "normal",
-          link: "/ganado/listado",
+          link: "/corrales/listado",
         },
         {
           name: "Agregar",
           type: "normal",
-          link: "/ganado/agregar",
+          link: "/corrales/agregar",
         },
       ],
     },
-  ];
-
-  const applicants = [
     {
-      name: "Joe",
-      work: "freelance-developer",
-      blogs: "54",
-      websites: "32",
-      hackathons: "6",
-      location: "morocco",
-      id: "0",
+      name: "Personal",
+      type: "drop",
+      link: "/personal",
+      extras: [
+        {
+          name: "Listado",
+          type: "normal",
+          link: "/personal/listado",
+        },
+        {
+          name: "Agregar",
+          type: "normal",
+          link: "/personal/agregar",
+        },
+      ],
     },
     {
-      name: "janet",
-      work: "fullstack-developer",
-      blogs: "34",
-      websites: "12",
-      hackathons: "8",
-      location: "Mozambique",
-      id: "1",
+      name: "Gastos",
+      type: "drop",
+      link: "/gastos",
+      extras: [
+        {
+          name: "Listado",
+          type: "normal",
+          link: "/gastos/listado",
+        },
+        {
+          name: "Agregar",
+          type: "normal",
+          link: "/gastos/agregar",
+        },
+      ],
+    },
+    {
+      name: "Ventas",
+      type: "drop",
+      link: "/ventas",
+      extras: [
+        {
+          name: "Listado",
+          type: "normal",
+          link: "/ventas/listado",
+        },
+        {
+          name: "Agregar",
+          type: "normal",
+          link: "/ventas/agregar",
+        },
+      ],
+    },
+    {
+      name: "Enfermedades",
+      type: "drop",
+      link: "/enfermedades",
+      extras: [
+        {
+          name: "Listado",
+          type: "normal",
+          link: "/enfermedades/listado",
+        },
+        {
+          name: "Agregar",
+          type: "normal",
+          link: "/enfermedades/agregar",
+        },
+      ],
     },
   ];
 
