@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 const Footer = (props) => {
   return (
     <>
-      <footer className="text-center text-lg-start bg-body-tertiary fixed-bottom text-muted">
+      <footer className="footer mt-auto py-3 bg-dark-light text-bg-dark">
         
         {props.full?
         <>
-        <section className="">
+        <section className="pt-3">
           <div className="container text-center text-md-start mt-2">
             <div className="row mt-1">
-              <div className="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">
+              <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-2">
                   <FontAwesomeIcon icon={faSquare}></FontAwesomeIcon>Granja "El Charolais"
                 </h6>
                 <p>Ofreciendo la mejor calidad en ganado vacuno.</p>
               </div>
 
-              <div className="col-md-2 col-lg-2 col-xl-4 mx-auto mb-4">
+              <div className="col-md-4 col-lg-2 col-xl-4 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-2">Servicios</h6>
                 <p>
                   Control Ganado Control de Ventas Control de Corrales Control
@@ -61,7 +61,7 @@ const Footer = (props) => {
         </>
         : 
         <div
-          className="text-center p-4"
+          className="text-center p-2"
           //style={{"background-color: rgba(0, 0, 0, 0.05);"}}
         >
           © 2024 Copyright: 

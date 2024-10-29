@@ -7,11 +7,14 @@ const Ganado = () => {
   return (
     <>
       <Navbar/>
-      <div className='container mt-3'>
+      <main className="flex-shrink-0">
+        <div className='container container-nav'>
+
         <h2>Control de Ganado</h2>
         <Outlet/>
+        </div>
+      </main>
 
-      </div>
       <Footer />
     </>
   )

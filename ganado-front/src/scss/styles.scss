@@ -1,18 +1,76 @@
+:root {
+  --primary-dark-color: #990000;
+  --secondary-dark-color: #992222dd;
+}
+
+.nav-link {
+  font-size: 1.2rem !important;
+  color: whitesmoke !important;
+}
+.bg-dark {
+  background-color: var(--primary-dark-color) !important;
+}
+
+.bg-cow {
+  background-image: url("cows.jpg");
+  background-position: center;
+}
+
+.bg-dark-light {
+  background-color: var(--secondary-dark-color) !important;
+}
 .error-message {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 footer {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 
-    div {
-        p {
-            margin-bottom: 0.1rem;
-        }
+  div {
+    p {
+      margin-bottom: 0.1rem;
     }
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 2rem;
+  flex: 1;
+}
+
+.container-nav {
+  margin-top: 65px;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("/cows.jpg");
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 100% 100%;
+  flex: 1;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}
+
+.home-bg {
+  max-width: 800px;
 }

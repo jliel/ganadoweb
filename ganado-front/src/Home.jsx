@@ -1,18 +1,24 @@
-import React from 'react'
-import { Navbar } from './components/Navbar/Navbar'
-import { Outlet } from 'react-router-dom'
-import Footer from './components/Footer/Footer'
+import React from "react";
+import { Navbar } from "./components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <div className='container mt-3'>
-        <h2>Bienvenido al sistema de control.</h2>
-      </div>
-      <Footer full={true}/>
-    </>
-  )
-}
+      <main class="flex-shrink-0">
+        <div class="container">
+          <div className="d-flex justify-content-center alig flex-column text-center">
+          <h1 class="mt-5">Bienvenido al Sistema de Control de Granja el Charolais</h1>
 
-export default Home
+          <img src="/cows.jpg" alt="" className="home-bg mt-2 m-auto mb-2"/>
+          </div>
+        </div>
+      </main>
+      <Footer full={true} />
+    </>
+  );
+};
+
+export default Home;

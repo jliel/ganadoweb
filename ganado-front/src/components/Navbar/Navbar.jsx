@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "../Dropdown/Dropdown";
@@ -26,14 +25,14 @@ export const Navbar = () => {
         {
           name: "Listado",
           type: "normal",
-          link: "/ganado/listado"
+          link: "/ganado/listado",
         },
         {
           name: "Agregar",
           type: "normal",
-          link: "/ganado/agregar"
+          link: "/ganado/agregar",
         },
-      ]
+      ],
     },
     {
       name: "Ventas",
@@ -43,14 +42,14 @@ export const Navbar = () => {
         {
           name: "Listado",
           type: "normal",
-          link: "/ganado/listado"
+          link: "/ganado/listado",
         },
         {
           name: "Agregar",
           type: "normal",
-          link: "/ganado/agregar"
+          link: "/ganado/agregar",
         },
-      ]
+      ],
     },
   ];
 
@@ -77,8 +76,7 @@ export const Navbar = () => {
 
   return (
     <>
-    
-      <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-4">
         <Link className="navbar-brand" to={"/"}>
           Charolais
         </Link>
@@ -106,13 +104,13 @@ export const Navbar = () => {
                   </Link>
                 </li>
               ) : (
-                
-                <Dropdown item={data} key={data.name}/>
+                <Dropdown item={data} key={data.name} />
               );
             })}
-            
-
           </ul>
+          <Link className="nav-link" to={"/login"}>
+            Login
+          </Link>
         </div>
       </nav>
     </>
