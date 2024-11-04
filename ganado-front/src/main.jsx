@@ -16,6 +16,28 @@ import Agregar from "./pages/Ganado/Agregar.jsx";
 import Editar from "./pages/Ganado/Editar.jsx";
 import Corrales from "./pages/Corrales/Corrales.jsx";
 import ListadoCorral from "./pages/Corrales/ListadoCorral.jsx";
+import AgregarGanado from "./pages/Ganado/Agregar.jsx";
+import AgregarCorral from "./pages/Corrales/Agregar.jsx";
+import Personal from "./pages/Personal/Personal.jsx";
+import ListadoPersonal from "./pages/Personal/Listado.jsx";
+import AgregarPersonal from "./pages/Personal/Agregar.jsx";
+import Gastos from "./pages/Gastos/Gastos.jsx";
+import ListadoGastos from "./pages/Gastos/Listado.jsx";
+import AgregarGastos from "./pages/Gastos/Agregar.jsx";
+import Ventas from "./pages/Ventas/Ventas.jsx";
+import ListadoVentas from "./pages/Ventas/Listado.jsx";
+import AgregarVenta from "./pages/Ventas/Agregar.jsx";
+import Enfermedades from "./pages/Enfermedades/Enfermedades.jsx";
+import ListadoEnfermedades from "./pages/Enfermedades/Listado.jsx";
+import AgregarEnfermedad from "./pages/Enfermedades/Agregar.jsx";
+import EditarGanado from "./pages/Ganado/Editar.jsx";
+import EditarCorral from "./pages/Corrales/Editar.jsx";
+import EditarPersonal from "./pages/Personal/Editar.jsx";
+import EditarGasto from "./pages/Gastos/Editar.jsx";
+import EditarVenta from "./pages/Ventas/Editar.jsx";
+import EditarEnfermedad from "./pages/Enfermedades/Editar.jsx";
+import ReporteCorrales from "./pages/reportes/ReporteCorrales/ReporteCorrales.jsx";
+import Reportes from "./pages/reportes/Reportes.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +55,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/ganado/agregar",
-        element: <Agregar/>
+        element: <AgregarGanado/>
       },
       {
         path: "/ganado/editar/:id",
-        element: <Editar/>
+        element: <EditarGanado/>
       },
     ],
   },
@@ -51,101 +73,105 @@ const router = createBrowserRouter([
       },
       {
         path: "/corrales/agregar",
-        element: <Agregar/>
+        element: <AgregarCorral/>
       },
       {
         path: "/corrales/editar/:id",
-        element: <Editar/>
+        element: <EditarCorral/>
       },
     ],
     
   },
   {
     path: "/personal",
-    element: <Ganado />,
+    element: <Personal />,
     children: [
       {
         path: "/personal/listado",
-        element: <Listado/>
+        element: <ListadoPersonal/>
       },
       {
         path: "/personal/agregar",
-        element: <Agregar/>
+        element: <AgregarPersonal/>
       },
       {
         path: "/personal/editar/:id",
-        element: <Editar/>
+        element: <EditarPersonal/>
       },
     ],
   },
   {
     path: "/gastos",
-    element: <Ganado />,
+    element: <Gastos />,
     children: [
       {
         path: "/gastos/listado",
-        element: <Listado/>
+        element: <ListadoGastos/>
       },
       {
         path: "/gastos/agregar",
-        element: <Agregar/>
+        element: <AgregarGastos/>
       },
       {
         path: "/gastos/editar/:id",
-        element: <Editar/>
+        element: <EditarGasto/>
       },
     ],
   },
   {
     path: "/ventas",
-    element: <Ganado />,
+    element: <Ventas />,
     children: [
       {
         path: "/ventas/listado",
-        element: <Listado/>
+        element: <ListadoVentas/>
       },
       {
         path: "/ventas/agregar",
-        element: <Agregar/>
+        element: <AgregarVenta/>
       },
       {
         path: "/ventas/editar/:id",
-        element: <Editar/>
+        element: <EditarVenta/>
       },
     ],
   },
   {
     path: "/enfermedades",
-    element: <Ganado />,
+    element: <Enfermedades />,
     children: [
       {
         path: "/enfermedades/listado",
-        element: <Listado/>
+        element: <ListadoEnfermedades/>
       },
       {
         path: "/enfermedades/agregar",
-        element: <Agregar/>
+        element: <AgregarEnfermedad/>
       },
       {
         path: "/enfermedades/editar/:id",
-        element: <Editar/>
+        element: <EditarEnfermedad/>
       },
     ],
   },
   {
     path: "/reportes",
-    element: <Ganado />,
+    element: <Reportes />,
     children: [
       {
         path: "/reportes/costos",
-        element: <Listado/>
+        element: <ReporteCorrales/>
       },
       {
         path: "/reportes/corrales",
-        element: <Agregar/>
+        element: <ReporteCorrales/>
       },
       {
         path: "/reportes/ganancias",
+        element: <Editar/>
+      },
+      {
+        path: "/reportes/enfermedades",
         element: <Editar/>
       },
     ],

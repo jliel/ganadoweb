@@ -1,0 +1,66 @@
+export default [
+    {
+        id: 1,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 2,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 3,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+
+    {
+        id: 4,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 5,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 6,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 7,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 8,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+    {
+        id: 9,
+        descripcion: "Sarna",
+        fecha_registro: "27-02-2024",
+        id_ganado: "1",
+        to: "enfermedades/editar",
+    },
+]

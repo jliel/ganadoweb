@@ -119,13 +119,40 @@ export const Navbar = () => {
         },
       ],
     },
+    {
+      name: "Reportes",
+      type: "drop",
+      link: "/reportes",
+      extras: [
+        {
+          name: "Corrales",
+          type: "normal",
+          link: "/reportes/corrales",
+        },
+        {
+          name: "Costos",
+          type: "normal",
+          link: "/reportes/costos",
+        },
+        {
+          name: "Ganancias",
+          type: "normal",
+          link: "/reportes/ganancias",
+        },
+        {
+          name: "Enfermedades",
+          type: "normal",
+          link: "/reportes/enfermedades",
+        },
+      ],
+    },
   ];
 
   return (
     <>
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-4">
         <Link className="navbar-brand" to={"/"}>
-          Charolais
+          <img src="/logo.jpg" alt="" className="nav-logo"/>
         </Link>
         <button
           className="navbar-toggler"

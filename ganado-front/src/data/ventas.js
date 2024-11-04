@@ -1,0 +1,66 @@
+export default [
+    {
+        id: 1,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 2,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 3,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+
+    {
+        id: 4,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 5,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 6,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 7,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 8,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+    {
+        id: 9,
+        cantidad: "800",
+        fecha_registro: "27-02-2024",
+        id_personal: "1",
+        to: "ventas/editar",
+    },
+]

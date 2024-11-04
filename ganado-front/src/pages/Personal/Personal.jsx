@@ -5,14 +5,14 @@ import Footer from '../../components/Footer/Footer'
 
 
 
-const Ganado = () => {
+const Personal = () => {
   return (
     <>
       <Navbar/>
       <main className="flex-shrink-0 mb-5">
         <div className='container container-nav'>
 
-        <h2>Control de Ganado</h2>
+        <h2>Control de Personal</h2>
         <Outlet/>
         </div>
       </main>
@@ -22,4 +22,4 @@ const Ganado = () => {
   )
 }
 
-export default Ganado
+export default Personal

@@ -1,6 +1,16 @@
 :root {
   --primary-dark-color: #990000;
   --secondary-dark-color: #992222dd;
+  --form-bg-color: #f8c6f711;
+}
+
+.nav-logo {
+  width: 32px;
+  border-radius: 50%;
+}
+
+.btn-primary {
+  background-color: var(--secondary-dark-color) !important;
 }
 
 .nav-link {
@@ -107,5 +117,18 @@ main {
 .inactiveButton {
   color: #2c3e50;
   background: #f9f9f9;
+}
+
+.form-agregar {
+  max-width: 60%;
+  background-color: var(--form-bg-color);
+  padding: 2rem;
+  border: solid 2px rgba(248, 198, 247, .5);
+  border-radius: 10px;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-around;
 }
 

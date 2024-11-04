@@ -1,20 +1,20 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const EditarGanado = () => {
+const EditarPersonal = () => {
   const {id} = useParams()
   return (
     <form className="form-agregar">
-      <h2>Editar Ganado</h2>
-      <div className="row mb-4">
-        <div className="col">
-          <div data-mdb-input-init className="form-outline">
-            <input type="text" id="id" className="form-control" />
-            <label className="form-label" for="id">
-              Identificador
-            </label>
-          </div>
+      <h2>Editar Personal</h2>
+      <div className="col">
+        <div data-mdb-input-init className="form-outline">
+          <input type="text" id="nombre" className="form-control" />
+          <label className="form-label" for="nombre">
+            Nombre
+          </label>
         </div>
+      </div>
+      <div className="row mb-4">
         <div className="col">
           <div data-mdb-input-init className="form-outline">
             <input type="date" id="fecha" className="form-control" />
@@ -23,13 +23,12 @@ const EditarGanado = () => {
             </label>
           </div>
         </div>
-      </div>
-
-      <div data-mdb-input-init className="form-outline mb-4">
-        <input type="text" id="Id Corral" className="form-control" />
-        <label className="form-label" for="Id Corral">
-          Corral Asignado
-        </label>
+        <div data-mdb-input-init className="form-outline mb-4 col">
+          <input type="text" id="Id Corral" className="form-control" />
+          <label className="form-label" for="Id Corral">
+            Corral Asignado
+          </label>
+        </div>
       </div>
 
       <button
@@ -43,4 +42,4 @@ const EditarGanado = () => {
   )
 }
 
-export default EditarGanado
+export default EditarPersonal
