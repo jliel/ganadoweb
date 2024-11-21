@@ -1,8 +1,29 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import corrales from '../../data/corrales'
+import { useLocation } from "react-router-dom";
 
 const EditarCorral = () => {
   const {id} = useParams()
+  const location = useLocation();
+  //const { id } = location.state;
+
+  function update(id) {
+    console.log(id)
+    console.log(corrales);
+    const iden = document.getElementById("identi");
+    if(iden.value != "") {
+    const objWithIdIndex = corrales.findIndex((obj) => obj.id == id);
+    const con = confirm("Realmente deseas editar este registro con valor:" + corrales[objWithIdIndex].identificador);
+    if(con) {
+      
+      corrales[objWithIdIndex].identificador = iden.value;
+      alert("nuevo valor de identificador " + corrales[objWithIdIndex].identificador)
+    }
+  } else {
+    alert("Ingresa un valor valido");
+  }
+  }
   return (
     <form className="form-agregar">
       <h2>Editar Corral</h2>
@@ -12,7 +33,7 @@ const EditarCorral = () => {
             <label className="form-label" for="id">
               Identificador Corral
             </label>
-            <input type="text" id="id" className="form-control" />
+            <input type="text" id="identi" className="form-control" />
           </div>
         </div>
       </div>
@@ -23,6 +44,7 @@ const EditarCorral = () => {
         data-mdb-ripple-init
         type="button"
         className="btn btn-primary btn-block mb-4 "
+        onClick={() => update(id)}
       >
         Guardar Cambios
       </button>

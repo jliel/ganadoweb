@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <main class="flex-shrink-0">
-        <div class="container">
+      <main className="flex-shrink-0">
+        <div className="container">
           <div className="d-flex justify-content-center alig flex-column text-center">
-          <h1 class="mt-5">Bienvenido al Sistema de Control de Granja el Charolais</h1>
+          <h1 className="mt-5">Bienvenido al Sistema de Control de Granja el Charolais</h1>
 
           <img src="/cows.jpg" alt="" className="home-bg mt-2 m-auto mb-2"/>
           </div>

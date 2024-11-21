@@ -1,7 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import usuarios from "./data/usuarios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  function logint(e) {
+    e.preventDefault();
+    const user = document.getElementById("email");
+    const pass = document.getElementById("typePasswordX");
+
+    if(user.value!="") {
+      const results = usuarios.filter(function (users) { return users.usuario == user.value; });
+      const firstObj = (results.length > 0) ? results[0] : null;
+
+      if(firstObj) {
+        if(firstObj.pass == pass.value) {
+          console.log("correcto");
+          alert("Bienvenido al sistema " + firstObj.usuario);
+          navigate("/");
+        } else {
+          alert("Contraseña incorrecta.");
+          console.log("contraseña incorrecta");
+        }
+      }else {
+        alert("Usuario " + user.value + " no registrado en el sistema.");
+        console.log("usuario invalido");
+      }
+    } else {
+      console.log("ingresa datos");
+    }
+
+    console.log("entradno");
+  }
+
   return (
     <section className="vh-100 bg-cow">
       <div className="container py-5 h-100">
@@ -35,14 +68,15 @@ const Login = () => {
                     />
                   </div>
 
-                  <Link
+                  {/* <Link
                     
                     className="btn btn-outline-light btn-lg px-5"
                     type="submit"
                     to={"/"}
                   >
                     Entrar
-                  </Link>
+                  </Link> */}
+                  <button className="btn btn-outline-light btn-lg px-5" onClick={logint}>Entrar</button>
                 </div>
               </div>
             </div>

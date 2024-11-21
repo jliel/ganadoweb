@@ -7,6 +7,18 @@ import { Link } from "react-router-dom";
 const Table = ({ data, rowsPerPage, headers }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
+
+  function eliminar(id) {
+    
+    const objWithIdIndex = data.findIndex((obj) => obj.id === id);
+    const con = confirm("Realmente deseas eliminar el registro " + data[objWithIdIndex].id);
+    if(con) {
+
+      console.log(data[objWithIdIndex] + "objeto encontado");
+      data.splice(objWithIdIndex, 1);
+      console.log(id + "eliminado");
+    }
+  }
   return (
     <>
       <table className="table">
@@ -33,12 +45,13 @@ const Table = ({ data, rowsPerPage, headers }) => {
               {el.id_personal ? <td>{el.id_personal}</td> : ""}
               {el.id_ganado ? <td>{el.id_ganado}</td> : ""}
               <td>
-                <button className="btn bg-danger text-light p-1 m-1">
-                  Eliminar
+                <button className="btn bg-danger text-light p-1 m-1" onClick={() => eliminar(el.id)}>
+                  Eliminart
                 </button>
                 <Link 
                 className="btn bg-success text-light p-1"
                 to={`/${el.to}/${el.id}`}
+                state={{ id: el.id }}
                 >Editar
                 </Link>
               </td>
