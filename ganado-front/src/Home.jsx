@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 
 const Home = () => {
+  
   return (
     <>
       <Navbar />
@@ -12,7 +13,7 @@ const Home = () => {
           <div className="d-flex justify-content-center alig flex-column text-center">
           <h1 class="mt-5">Bienvenido al Sistema de Control de Granja el Charolais</h1>
 
-          <img src="/cows.jpg" alt="" className="home-bg mt-2 m-auto mb-2"/>
+          <img src="/logo.jpg" alt="" className="home-bg mt-2 m-auto mb-2"/>
           </div>
         </div>
       </main>

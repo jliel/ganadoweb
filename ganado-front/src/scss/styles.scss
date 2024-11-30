@@ -131,4 +131,20 @@ main {
   display: flex;
   justify-content: space-around;
 }
+/*estilos generales para el cambio de alto contraste*/
+.alto-contraste { 
+  background-color: #000 !important;//negro
+  color:#fff !important; //texto blanco
+
+ }
+
+ .alto-contraste a {
+  color: #ffff00 !important;//enlaces amarillos
+  text-decoration: underline !important; //decoracion subrayada
+ }
+ .alto-contraste button {
+  background-color: #fff; //botones blanco
+  color: #000; //texto negro
+  border: 2px solid #ffff00;//borde amarillo 
+ }
 

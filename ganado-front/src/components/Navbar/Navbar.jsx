@@ -5,10 +5,16 @@ import Dropdown from "../Dropdown/Dropdown";
 export const Navbar = () => {
   const [show, setshow] = useState(true);
   const [showed, setshowed] = useState("");
+  const [isHighContrast, setIsHighContrast] = useState(false);
 
   const toggleMenu = () => {
     setshow(!show);
     setshowed(show ? "show" : "");
+  };
+
+  const toggleConstrast = ()  => {
+    setIsHighContrast(!setIsHighContrast);
+    document.body.classList.add("alto-contraste", !isHighContrast);
   };
 
   const menu = [
@@ -182,9 +188,18 @@ export const Navbar = () => {
               );
             })}
           </ul>
+          <div className="d-flex align-items-center">
+            <button
+            id="toggle-contrast"
+            className="btn btn-outline-light mx-2"
+            onClick={toggleConstrast}
+            >
+              {isHighContrast ? "Modo normal": "Modo alto contraste"}
+            </button>
           <Link className="nav-link" to={"/login"}>
             Login
           </Link>
+        </div>
         </div>
       </nav>
     </>

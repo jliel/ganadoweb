@@ -10,6 +10,8 @@ const Login = () => {
             <div className="card bg-dark text-white" >
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
+
+                  //imagen logo, style para hacerlo mas pequeño
                   <h2 className="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
                   <p className="text-white-50 mb-5">
                     Ingresa tu usuario y contraseña!
