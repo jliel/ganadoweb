@@ -3,20 +3,33 @@ import React, { useState } from "react";
 import useTable from "../../hooks/useTable";
 import TableFooter from "./TableFooter";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Table = ({ data, rowsPerPage, headers }) => {
+import GanadoServices from "../../services/GanadoServices";
+import CorralServices from "../../services/CorralServices";
+
+const Table = ({ data, rowsPerPage, headers, to, tolist }) => {
+  const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
 
   function eliminar(id) {
-    
     const objWithIdIndex = data.findIndex((obj) => obj.id === id);
-    const con = confirm("Realmente deseas eliminar el registro " + data[objWithIdIndex].id);
-    if(con) {
-
+    const con = confirm(
+      "Realmente deseas eliminar el registro " + data[objWithIdIndex].id
+    );
+    if (con) {
       console.log(data[objWithIdIndex] + "objeto encontado");
       data.splice(objWithIdIndex, 1);
+      switch (tolist) {
+        case "ganado":
+          GanadoServices.remove(id);
+          break;
+        case "corral":
+          CorralServices.remove(id);
+      }
       console.log(id + "eliminado");
+      window.location.reload();
     }
   }
   return (
@@ -45,14 +58,18 @@ const Table = ({ data, rowsPerPage, headers }) => {
               {el.id_personal ? <td>{el.id_personal}</td> : ""}
               {el.id_ganado ? <td>{el.id_ganado}</td> : ""}
               <td>
-                <button className="btn bg-danger text-light p-1 m-1" onClick={() => eliminar(el.id)}>
-                  Eliminart
+                <button
+                  className="btn bg-danger text-light p-1 m-1"
+                  onClick={() => eliminar(el.id)}
+                >
+                  Eliminar
                 </button>
-                <Link 
-                className="btn bg-success text-light p-1"
-                to={`/${el.to}/${el.id}`}
-                state={{ id: el.id }}
-                >Editar
+                <Link
+                  className="btn bg-success text-light p-1"
+                  to={`/${to}/${el.id}`}
+                  state={{ id: el.id }}
+                >
+                  Editar
                 </Link>
               </td>
             </tr>

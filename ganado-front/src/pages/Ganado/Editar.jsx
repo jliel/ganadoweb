@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import GanadoServices from "../../services/GanadoServices";
+import { useNavigate } from 'react-router-dom';
+
 
 const EditarGanado = () => {
   const {id} = useParams()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    console.log("hola" + id)
+  }, []);
+
+  const update = (e) => {
+    let ganado = {
+      "identificador": "",
+      "fecha_ingreso":"",
+      "corral":"",
+    }
+  
+    ganado.identificador = document.getElementById("id").value;
+    ganado.fecha_ingreso = document.getElementById("fecha").value;
+    ganado.corral = document.getElementById("corral").value;
+    GanadoServices.update(id, ganado)
+    navigate("/ganado/listado")
+  }
   return (
     <form className="form-agregar">
       <h2>Editar Ganado</h2>
@@ -26,7 +48,7 @@ const EditarGanado = () => {
       </div>
 
       <div data-mdb-input-init className="form-outline mb-4">
-        <input type="text" id="Id Corral" className="form-control" />
+        <input type="text" id="corral" className="form-control" />
         <label className="form-label" for="Id Corral">
           Corral Asignado
         </label>
@@ -36,6 +58,7 @@ const EditarGanado = () => {
         data-mdb-ripple-init
         type="button"
         className="btn btn-primary btn-block mb-4"
+        onClick={()=>update()}
       >
         Guardar Cambios
       </button>

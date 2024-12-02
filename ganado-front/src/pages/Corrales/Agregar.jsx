@@ -1,6 +1,20 @@
 import React from "react";
+import CorralServices from "../../services/CorralServices";
+import { useNavigate } from "react-router-dom";
+
 
 const AgregarCorral = () => {
+  const navigate = useNavigate();
+
+  let corral = {
+    identificador: "",
+  };
+
+  const create = (e) => {
+    corral.identificador = document.getElementById("id").value;
+    CorralServices.create(corral);
+    navigate("/corrales/listado");
+  };
   return (
     <form className="form-agregar">
       <h2>Agregar Corral</h2>
@@ -21,6 +35,7 @@ const AgregarCorral = () => {
         data-mdb-ripple-init
         type="button"
         className="btn btn-primary btn-block mb-4 "
+        onClick={() => create()}
       >
         Agregar
       </button>

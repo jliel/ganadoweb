@@ -2,27 +2,26 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import corrales from '../../data/corrales'
 import { useLocation } from "react-router-dom";
+import CorralServices from '../../services/CorralServices';
+import { useNavigate } from 'react-router-dom';
+
 
 const EditarCorral = () => {
   const {id} = useParams()
   const location = useLocation();
+  const navigate = useNavigate()
+
   //const { id } = location.state;
+  
 
   function update(id) {
-    console.log(id)
-    console.log(corrales);
-    const iden = document.getElementById("identi");
-    if(iden.value != "") {
-    const objWithIdIndex = corrales.findIndex((obj) => obj.id == id);
-    const con = confirm("Realmente deseas editar este registro con valor:" + corrales[objWithIdIndex].identificador);
-    if(con) {
-      
-      corrales[objWithIdIndex].identificador = iden.value;
-      alert("nuevo valor de identificador " + corrales[objWithIdIndex].identificador)
+    let corral = {
+      "identificador": "",
     }
-  } else {
-    alert("Ingresa un valor valido");
-  }
+  
+    corral.identificador = document.getElementById("identi").value;
+    CorralServices.update(id, corral)
+    navigate("/corrales/listado")
   }
   return (
     <form className="form-agregar">
