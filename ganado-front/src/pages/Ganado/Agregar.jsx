@@ -9,7 +9,7 @@ const AgregarGanado = () => {
   const navigate = useNavigate();
 
   let ganado = {
-    identificador: "",
+  identificador: "",
     fecha_ingreso: "",
     corral: "",
   };

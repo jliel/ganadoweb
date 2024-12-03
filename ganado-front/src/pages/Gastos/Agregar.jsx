@@ -1,6 +1,23 @@
 import React from "react";
+import GastoServices from "../../services/GastoServices";
+import { useNavigate } from "react-router-dom";
 
 const AgregarGastos = () => {
+  const navigate = useNavigate();
+
+  let gasto = {
+    "cantidad": "",
+    "fecha_registro":"",
+    "id_personal":"",
+  }
+
+  const create = (e) => {
+    gasto.cantidad = document.getElementById("cantidad").value;
+    gasto.fecha_registro = document.getElementById("fecha").value;
+    gasto.id_personal = document.getElementById("personal").value;
+    GastoServices.create(gasto);
+    navigate("/gastos/listado");
+  };
   return (
     <form className="form-agregar">
       <h2>Agregar Gastos</h2>
@@ -22,7 +39,7 @@ const AgregarGastos = () => {
           </div>
         </div>
         <div data-mdb-input-init className="form-outline mb-4 col">
-          <input type="text" id="id_personal" className="form-control" />
+          <input type="text" id="personal" className="form-control" />
           <label className="form-label" for="id_personal">
             Personal que autoriza
           </label>
@@ -33,6 +50,8 @@ const AgregarGastos = () => {
         data-mdb-ripple-init
         type="button"
         className="btn btn-primary btn-block mb-4"
+        onClick={() => create()}
+
       >
         Agregar
       </button>
