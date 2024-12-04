@@ -1,12 +1,30 @@
 import React from "react";
+import EnfermedadServices from "../../services/EnfermedadServices";
+import { useNavigate } from "react-router-dom";
+
 
 const AgregarEnfermedad = () => {
+  const navigate = useNavigate();
+
+  let enfermedad = {
+    descripcion: "",
+    fecha_registro: "",
+    id_ganado: "",
+  };
+
+  const create = (e) => {
+    enfermedad.descripcion = document.getElementById("desc").value;
+    enfermedad.fecha_registro = document.getElementById("fecha").value;
+    enfermedad.id_ganado = document.getElementById("ganado").value;
+    EnfermedadServices.create(enfermedad);
+    navigate("/enfermedades/listado");
+  };
   return (
     <form className="form-agregar">
       <h2>Agregar Enfermedad</h2>
       <div className="col">
         <div data-mdb-input-init className="form-outline">
-          <input type="text" id="descripcion" className="form-control" />
+          <input type="text" id="desc" className="form-control" />
           <label className="form-label" for="descripcion">
             Descripcion
           </label>
@@ -22,7 +40,7 @@ const AgregarEnfermedad = () => {
           </div>
         </div>
         <div data-mdb-input-init className="form-outline mb-4 col">
-          <input type="text" id="id_ganado" className="form-control" />
+          <input type="text" id="ganado" className="form-control" />
           <label className="form-label" for="id_ganado">
             Ganado Enfermo
           </label>
@@ -33,6 +51,8 @@ const AgregarEnfermedad = () => {
         data-mdb-ripple-init
         type="button"
         className="btn btn-primary btn-block mb-4"
+        onClick={() => create()}
+
       >
         Agregar
       </button>

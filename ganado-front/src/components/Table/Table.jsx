@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 import GanadoServices from "../../services/GanadoServices";
 import CorralServices from "../../services/CorralServices";
+import PersonalServices from "../../services/PersonalServices";
+import GastoServices from "../../services/GastoServices"
+import VentaServices from "../../services/VentaServices";
+import EnfermedadServices from "../../services/EnfermedadServices";
 
 const Table = ({ data, rowsPerPage, headers, to, tolist }) => {
   const navigate = useNavigate();
@@ -27,6 +31,19 @@ const Table = ({ data, rowsPerPage, headers, to, tolist }) => {
           break;
         case "corral":
           CorralServices.remove(id);
+          break;
+        case "personal":
+          PersonalServices.remove(id);
+          break;
+        case "gasto":
+          GastoServices.remove(id);
+          break;
+        case "venta":
+          VentaServices.remove(id);
+          break;
+        case "enfermedad":
+          EnfermedadServices.remove(id);
+          break;
       }
       console.log(id + "eliminado");
       window.location.reload();
