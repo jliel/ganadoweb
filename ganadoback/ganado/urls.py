@@ -15,6 +15,12 @@ urlpatterns = [
     path('corral/update/<int:pk>/', CorralUpdate.as_view(), name='update-corral'),
     path('corral/delete/<int:pk>/', CorralDelete.as_view(), name='delete-corral'),
 
+    path('personal/create/', PersonalCreate.as_view(), name='create-personal'),
+    path('personal/', PersonalList.as_view()),
+    path('personal/<int:pk>/', PersonalDetail.as_view(), name='retrieve-personal'),
+    path('personal/update/<int:pk>/', PersonalUpdate.as_view(), name='update-personal'),
+    path('personal/delete/<int:pk>/', PersonalDelete.as_view(), name='delete-personal'),
+
     path('gasto/create/', GastoCreate.as_view(), name='create-gasto'),
     path('gasto/', GastoList.as_view()),
     path('gasto/<int:pk>/', GastoDetail.as_view(), name='retrieve-gasto'),
