@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'ganadoback.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ganado',
         'USER': 'admin',
         'PASSWORD': '1234',
