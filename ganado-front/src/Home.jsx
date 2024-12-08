@@ -14,7 +14,7 @@ const Home = () => {
           <h1 className="mt-5">Bienvenido al Sistema de Control de Granja el Charolais</h1>
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-6 d-flex justify-content-center align-content-center text-center">
 
-          <img src="/logo.jpg" alt="" className="home-bg mt-2 m-auto mb-2 img-fluid w-75"/>
+          <img src="/logo.jpg" alt="" className="home-bg mt-2 m-auto mb-2 img-fluid w-25"/>
           </div>
           </div>
         </div>
