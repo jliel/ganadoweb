@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import EnfermedadServices from "../../services/EnfermedadServices";
@@ -6,6 +6,8 @@ import EnfermedadServices from "../../services/EnfermedadServices";
 const EditarEnfermedad = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  
 
   const update = (e) => {
     let enfermedad = {
