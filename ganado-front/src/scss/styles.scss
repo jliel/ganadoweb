@@ -160,21 +160,41 @@ main {
   border: 2px solid #40ff00;//borde amarillo 
  }
  body {
-  background-image: url('/public/pasto.jpg');
+  background-image: url('/public/past.jpg');
   background-size: cover; 
   background-attachment: fixed; /* Hace que el fondo no se mueva */
  background-attachment: blur;
  }
- .alto-contraste .navbar{
-  background-color: #222;
-  color:#fff;
- }  
- .alto-contraste .footer{
-background-color: #333;
-color: #fff;
- }
- .alto-contraste .body{
-  background-image: none;
-  background-color: #000;
+ .alto-contraste { 
+  background-color: #000 !important;//negro
+  color:#fff !important; //texto blanco
+
  }
 
+ .alto-contraste .a {
+  color: #ffff00 !important;//enlaces amarillos
+  text-decoration: underline !important; //decoracion subrayada
+ }
+ .alto-contraste .button {
+  background-color: #fff; //botones blanco
+  color: #000; //texto negro
+  border: 2px solid #ffff00;//borde amarillo 
+ }
+ .alto-contraste .navbar {
+  background-color: #222 !important; /* Fondo oscuro */
+  color: #fff !important; /* Texto blanco */
+}
+.alto-contraste .navbar .a {
+  color: #ffff00 !important; /* Enlaces amarillos */
+}
+.alto-contraste .footer {
+  background-color: #333 !important; /* Fondo oscuro */
+  color: #fff !important; /* Texto blanco */
+}
+.alto-contraste .footer .a {
+  color: #ffff00 !important; /* Enlaces amarillos */
+}
+.alto-contraste .body{
+  background-image: none !important; 
+  background-color: #000 !important;
+}
