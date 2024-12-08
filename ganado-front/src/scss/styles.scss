@@ -37,6 +37,9 @@
   align-items: center;
   text-align: left;
 }
+h1{
+  color: #e2e2e2;
+}
 
 footer {
   font-size: 0.8rem;
@@ -147,4 +150,11 @@ main {
   color: #000; //texto negro
   border: 2px solid #ffff00;//borde amarillo 
  }
+ body {
+  background-image: url('/public/pasto.jpg');
+  background-size: cover; 
+  background-attachment: fixed; /* Hace que el fondo no se mueva */
+ background-attachment: blur;
+ }
+
 
