@@ -13,8 +13,15 @@ export const Navbar = () => {
   };
 
   const toggleConstrast = ()  => {
-    setIsHighContrast(!setIsHighContrast);
-    document.body.classList.add("alto-contraste", !isHighContrast);
+    const newConstrasteState=!isHighContrast;
+    setIsHighContrast(newConstrasteState);
+
+    if (newConstrasteState){
+      document.body.classList.add("alto-contraste");
+    }
+    else{
+      document.body.classList.remove("alto-contraste");
+    }
   };
 
   const menu = [
