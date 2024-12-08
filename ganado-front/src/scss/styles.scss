@@ -37,6 +37,16 @@
   align-items: center;
   text-align: left;
 }
+h1{
+  color: #e2e2e2;
+}
+h2{
+  color: #e2e2e2;
+}
+label { 
+  color: #e2e2e2;
+}
+button{color: #e2e2e2;}
 
 footer {
   font-size: 0.8rem;
@@ -141,12 +151,30 @@ main {
  }
 
  .alto-contraste a {
-  color: #ffff00 !important;//enlaces amarillos
+  color: #b77100 !important;//enlaces amarillos
   text-decoration: underline !important; //decoracion subrayada
  }
  .alto-contraste button {
   background-color: #fff; //botones blanco
   color: #000; //texto negro
-  border: 2px solid #ffff00;//borde amarillo 
+  border: 2px solid #40ff00;//borde amarillo 
+ }
+ body {
+  background-image: url('/public/pasto.jpg');
+  background-size: cover; 
+  background-attachment: fixed; /* Hace que el fondo no se mueva */
+ background-attachment: blur;
+ }
+ .alto-contraste .navbar{
+  background-color: #222;
+  color:#fff;
+ }  
+ .alto-contraste .footer{
+background-color: #333;
+color: #fff;
+ }
+ .alto-contraste .body{
+  background-image: none;
+  background-color: #000;
  }
 
