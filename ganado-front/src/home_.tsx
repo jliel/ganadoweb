@@ -8,15 +8,15 @@ const Login = () => {
 
   function logint(e) {
     e.preventDefault();
-    const user = document.getElementById("email");
-    const pass = document.getElementById("typePasswordX");
+    const user = (document.getElementById("email")as HTMLInputElement | null);
+    const pass = (document.getElementById("typePasswordX")as HTMLInputElement | null);
 
-    if(user.value!="") {
-      const results = usuarios.filter(function (users) { return users.usuario == user.value; });
+    if(user!.value!="") {
+      const results = usuarios.filter(function (users) { return users.usuario == user!.value; });
       const firstObj = (results.length > 0) ? results[0] : null;
 
       if(firstObj) {
-        if(firstObj.pass == pass.value) {
+        if(firstObj.pass == pass!.value) {
           console.log("correcto");
           alert("Bienvenido al sistema " + firstObj.usuario);
           navigate("/");
@@ -25,7 +25,7 @@ const Login = () => {
           console.log("contraseña incorrecta");
         }
       }else {
-        alert("Usuario " + user.value + " no registrado en el sistema.");
+        alert("Usuario " + user!.value + " no registrado en el sistema.");
         console.log("usuario invalido");
       }
     } else {
@@ -44,8 +44,7 @@ const Login = () => {
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
 
-          <img src="/logo.jpg" alt="" className="home-bg mt-2 m-auto mb-2 img-fluid w-25 rounded-circle"/>
-                  
+                  //imagen logo, style para hacerlo mas pequeño
                   <h2 className="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
                   <p className="text-white-50 mb-5">
                     Ingresa tu usuario y contraseña!

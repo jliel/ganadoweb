@@ -85,7 +85,9 @@ main {
 }
 
 .home-bg {
-  max-width: 800px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .tableFooter {
