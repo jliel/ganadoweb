@@ -8,13 +8,17 @@ const EditarGanado = () => {
   const {id} = useParams()
   const navigate = useNavigate()
 
-  const [ganado, setganado] = useState([]);
+  const [ident, setident] = useState([]);
+  const [fecha, setfecha] = useState([]);
+  const [corral, setcorral] = useState([]);
 
   useEffect(() => {
     GanadoServices
       .get(id)
       .then((res) => {
-        setganado(res.data);
+        setident(res.data.identificador)
+        setfecha(res.data.fecha_registro)
+        setcorral(res.data.corral)
       })
       .catch((e) => {
         console.log("Error registro no existe.");
@@ -40,7 +44,7 @@ const EditarGanado = () => {
       <div className="row mb-4">
         <div className="col">
           <div data-mdb-input-init className="form-outline">
-            <input type="text" id="id" className="form-control" value={ganado.identificador}/>
+            <input type="text" id="id" className="form-control" value={ident} onChange={(e) => setident(e.target.value)}/>
             <label className="form-label" for="id">
               Identificador
             </label>
@@ -48,7 +52,7 @@ const EditarGanado = () => {
         </div>
         <div className="col">
           <div data-mdb-input-init className="form-outline">
-            <input type="date" id="fecha" className="form-control" value={ganado.fecha_registro}/>
+            <input type="date" id="fecha" className="form-control" value={fecha} onChange={(e) => setfecha(e.target.value)}/>
             <label className="form-label" for="fecha">
               Fecha de ingreso
             </label>
@@ -57,7 +61,7 @@ const EditarGanado = () => {
       </div>
 
       <div data-mdb-input-init className="form-outline mb-4">
-        <input type="text" id="corral" className="form-control" value={ganado.corral}/>
+        <input type="text" id="corral" className="form-control" value={corral} onChange={(e) => setcorral(e.target.value)}/>
         <label className="form-label" for="Id Corral">
           Corral Asignado
         </label>
