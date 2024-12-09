@@ -51,8 +51,8 @@ const Table = ({ data, rowsPerPage, headers, to, tolist }) => {
   }
   return (
     <>
-      <table className="table">
-        <thead>
+      <table className="table rounded-3 overflow-hidden">
+        <thead className="p-3">
           <tr>
             {headers.map((el) => (
               <th scope="col" key={el}>

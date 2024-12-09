@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import GanadoServices from "../../services/GanadoServices";
 import { useNavigate } from 'react-router-dom';
@@ -8,8 +8,17 @@ const EditarGanado = () => {
   const {id} = useParams()
   const navigate = useNavigate()
 
+  const [ganado, setganado] = useState([]);
+
   useEffect(() => {
-    console.log("hola" + id)
+    GanadoServices
+      .get(id)
+      .then((res) => {
+        setganado(res.data);
+      })
+      .catch((e) => {
+        console.log("Error registro no existe.");
+      })
   }, []);
 
   const update = (e) => {
@@ -31,7 +40,7 @@ const EditarGanado = () => {
       <div className="row mb-4">
         <div className="col">
           <div data-mdb-input-init className="form-outline">
-            <input type="text" id="id" className="form-control" />
+            <input type="text" id="id" className="form-control" value={ganado.identificador}/>
             <label className="form-label" for="id">
               Identificador
             </label>
@@ -39,7 +48,7 @@ const EditarGanado = () => {
         </div>
         <div className="col">
           <div data-mdb-input-init className="form-outline">
-            <input type="date" id="fecha" className="form-control" />
+            <input type="date" id="fecha" className="form-control" value={ganado.fecha_registro}/>
             <label className="form-label" for="fecha">
               Fecha de ingreso
             </label>
@@ -48,7 +57,7 @@ const EditarGanado = () => {
       </div>
 
       <div data-mdb-input-init className="form-outline mb-4">
-        <input type="text" id="corral" className="form-control" />
+        <input type="text" id="corral" className="form-control" value={ganado.corral}/>
         <label className="form-label" for="Id Corral">
           Corral Asignado
         </label>
