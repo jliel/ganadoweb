@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
-import GanadoServices from '../../../services/GanadoServices';
+import ventaServices from '../../../services/GanadoServices';
 
 const ReporteVentas = () => {
   const [idCorral, setIdCorral] = useState('');
@@ -11,7 +11,7 @@ const ReporteVentas = () => {
   // Función para manejar la generación del PDF
   const generarPDF = () => {
     
-    GanadoServices.getAll().then(res => {
+    VentaServices.getAll().then(res => {
         setcorral(res.data);
         console.log(corral)
     })
@@ -24,21 +24,23 @@ const ReporteVentas = () => {
 
     const doc = new jsPDF();
     doc.setFontSize(16);
-    doc.text('Reporte de Ganado', 10, 10);
+    doc.text('Reporte de ventas', 10, 10);
     doc.setFontSize(12);
-    doc.text(`Ganado Actual en el Rancho`, 10, 20);
+    doc.text(`Ventas en el Rancho`, 10, 20);
     let count = 30
     
     corral.forEach(element => {
-      doc.text(`Identificador del ganado: ${element.identificador}`, 10,count)
+      doc.text(`Monto de venta: ${Ventas.cantitad}`, 10,count)
+      count+=10
+      doc.text(`Fecha de la venta: ${Ventas.fecha_registro}`, 10,count)
       count+=10
     });
-    doc.save(`reporte_corral.pdf`);
+    doc.save(`reporte_ventas.pdf`);
   };
 
   return (
     <form className="form-agregar">
-      <h2>Generar Reporte Ganado</h2>
+      <h2>Generar Reporte Ventas</h2>
       <div className="col">
         <div data-mdb-input-init className="form-outline">
           

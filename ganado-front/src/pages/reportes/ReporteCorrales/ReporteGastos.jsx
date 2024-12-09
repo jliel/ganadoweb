@@ -1,44 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
-import GanadoServices from '../../../services/GanadoServices';
+import GastoServices from '../../../services/GanadoServices';
 
 const ReporteGastos = () => {
-  const [idCorral, setIdCorral] = useState('');
+  const [gastos,seGastos] = useState([]);
   const [error, setError] = useState('');
 
-  const [corral, setcorral] = useState([]);
+ 
 
   // Función para manejar la generación del PDF
   const generarPDF = () => {
     
-    GanadoServices.getAll().then(res => {
-        setcorral(res.data);
-        console.log(corral)
+    GastoServices.getAll().then(res => {
+        setGastos(res.data);
+        console.log(gastos);
     })
     .catch(err => {
         console.log(err.message);
-        return
+       return
     });
 
     setError('');
 
     const doc = new jsPDF();
     doc.setFontSize(16);
-    doc.text('Reporte de Ganado', 10, 10);
+    doc.text('Reporte de Gastos', 10, 10);
     doc.setFontSize(12);
-    doc.text(`Ganado Actual en el Rancho`, 10, 20);
+    doc.text(`Detalle de los gastos realizados`, 10, 20);
     let count = 30
     
     corral.forEach(element => {
-      doc.text(`Identificador del ganado: ${element.identificador}`, 10,count)
+      doc.text(`Monto de gasto: ${gastos.cantidad}`, 10,count);
+      count+=10
+      doc.text(`Fecha del gasto: ${gastos.fecha_registro}`, 10,count)
       count+=10
     });
-    doc.save(`reporte_corral.pdf`);
+    doc.save(`reporte_gastos.pdf`);
   };
 
   return (
     <form className="form-agregar">
-      <h2>Generar Reporte Ganado</h2>
+      <h2>Generar Reporte Gastos</h2>
       <div className="col">
         <div data-mdb-input-init className="form-outline">
           

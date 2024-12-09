@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
-import GanadoServices from '../../../services/GanadoServices';
+import CorralServices from '../../../services/GanadoServices';
 
-const ReporteCorrales = () => {
+const ReporteVentas = () => {
   const [idCorral, setIdCorral] = useState('');
   const [error, setError] = useState('');
 
@@ -11,7 +11,7 @@ const ReporteCorrales = () => {
   // Función para manejar la generación del PDF
   const generarPDF = () => {
     
-    GanadoServices.getAll().then(res => {
+    CorralServices.getAll().then(res => {
         setcorral(res.data);
         console.log(corral)
     })
@@ -32,8 +32,10 @@ const ReporteCorrales = () => {
     corral.forEach(element => {
       doc.text(`Identificador del ganado: ${element.identificador}`, 10,count)
       count+=10
+      doc.text(`Identificador del ganado: ${ganado.corral}`, 10,count)
+      count+=10
     });
-    doc.save(`reporte_corral.pdf`);
+    doc.save(`reporte_ganado.pdf`);
   };
 
   return (
@@ -58,4 +60,4 @@ const ReporteCorrales = () => {
   );
 };
 
-export default ReporteCorrales;
+export default ReporteVentas;
