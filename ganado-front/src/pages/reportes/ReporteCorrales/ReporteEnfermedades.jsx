@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
 import GanadoServices from '../../../services/GanadoServices';
 
-const ReporteCorrales = () => {
+const ReporteEnfermedades = () => {
   const [idCorral, setIdCorral] = useState('');
   const [error, setError] = useState('');
 
@@ -58,4 +58,4 @@ const ReporteCorrales = () => {
   );
 };
 
-export default ReporteCorrales;
+export default ReporteEnfermedades;

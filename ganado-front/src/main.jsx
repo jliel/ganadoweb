@@ -38,6 +38,9 @@ import EditarVenta from "./pages/Ventas/Editar.jsx";
 import EditarEnfermedad from "./pages/Enfermedades/Editar.jsx";
 import ReporteCorrales from "./pages/reportes/ReporteCorrales/ReporteCorrales.jsx";
 import Reportes from "./pages/reportes/Reportes.jsx";
+import ReporteGastos from "./pages/reportes/ReporteCorrales/ReporteGastos.jsx";
+import ReporteVentas from "./pages/reportes/ReporteCorrales/ReporteVentas.jsx";
+import ReporteEnfermedades from "./pages/reportes/ReporteCorrales/ReporteEnfermedades.jsx";
 
 const router = createBrowserRouter([
   {
@@ -159,20 +162,20 @@ const router = createBrowserRouter([
     element: <Reportes />,
     children: [
       {
-        path: "/reportes/costos",
+        path: "/reportes/ganado",
         element: <ReporteCorrales/>
       },
       {
-        path: "/reportes/corrales",
-        element: <ReporteCorrales/>
+        path: "/reportes/gastos",
+        element: <ReporteGastos/>
       },
       {
-        path: "/reportes/ganancias",
-        element: <Editar/>
+        path: "/reportes/ventas",
+        element: <ReporteVentas/>
       },
       {
         path: "/reportes/enfermedades",
-        element: <Editar/>
+        element: <ReporteEnfermedades/>
       },
     ],
   },

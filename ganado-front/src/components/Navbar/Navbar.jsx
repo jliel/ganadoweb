@@ -138,19 +138,19 @@ export const Navbar = () => {
       link: "/reportes",
       extras: [
         {
-          name: "Corrales",
+          name: "Ganado",
           type: "normal",
-          link: "/reportes/corrales",
+          link: "/reportes/ganado",
         },
         {
-          name: "Costos",
+          name: "Gastos",
           type: "normal",
-          link: "/reportes/costos",
+          link: "/reportes/gastos",
         },
         {
-          name: "Ganancias",
+          name: "Ventas",
           type: "normal",
-          link: "/reportes/ganancias",
+          link: "/reportes/ventas",
         },
         {
           name: "Enfermedades",

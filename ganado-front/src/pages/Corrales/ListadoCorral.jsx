@@ -8,17 +8,12 @@ const ListadoCorral = () => {
   const [corral, setcorral] = useState([]);
 
   useEffect(() => {
-    //   console.log(GanadoServices.getAll())
-    //  setcorral(GanadoServices.getAll());
       CorralServices.getAll().then(res => {
-        //console.log(res.data);
         setcorral(res.data);
     })
     .catch(err => {
         console.log(err.message);
-        //setHasError(true)
     });
-     //console.log(vacas)
     }, []);
   const [corrales] = useState([...corralesdata]);
   return (
