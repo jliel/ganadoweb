@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import corrales from '../../data/corrales'
 import { useLocation } from "react-router-dom";
@@ -12,6 +12,18 @@ const EditarCorral = () => {
   const navigate = useNavigate()
 
   //const { id } = location.state;
+  const [corral, setcorral] = useState([]);
+
+  useEffect(() => {
+    CorralServices
+      .get(id)
+      .then((res) => {
+        setcorral(res.data);
+      })
+      .catch((e) => {
+        console.log("Error registro no existe.");
+      })
+  }, []);
   
 
   function update(id) {
@@ -32,7 +44,7 @@ const EditarCorral = () => {
             <label className="form-label" for="id">
               Identificador Corral
             </label>
-            <input type="text" id="identi" className="form-control" />
+            <input type="text" id="identi" className="form-control" value={corral.identificador}/>
           </div>
         </div>
       </div>

@@ -163,7 +163,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark px-4">
+      <nav className="navbar navbar-expand-sm navbar-dark fixed-top bg-dark px-4">
         <Link className="navbar-brand" to={"/"}>
           <img src="/logo.jpg" alt="" className="nav-logo"/>
         </Link>
