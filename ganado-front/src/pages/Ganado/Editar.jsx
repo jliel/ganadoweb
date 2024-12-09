@@ -67,6 +67,7 @@ const EditarGanado = () => {
         </label>
       </div>
 
+      <div className="d-flex w-100 gap-3">
       <button
         data-mdb-ripple-init
         type="button"
@@ -75,6 +76,15 @@ const EditarGanado = () => {
       >
         Guardar Cambios
       </button>
+      <button
+        data-mdb-ripple-init
+        type="button"
+        className="btn btn-danger btn-block mb-4 "
+        onClick={() => navigate("/ganado/listado")}
+      >
+        Cancelar
+      </button>
+      </div>
     </form>
   )
 }
