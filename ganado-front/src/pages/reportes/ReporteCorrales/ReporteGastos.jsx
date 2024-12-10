@@ -1,12 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
-import GastoServices from '../../../services/GanadoServices';
+import GastoServices from '../../../services/GastoServices';
 
 const ReporteGastos = () => {
-  const [gastos,seGastos] = useState([]);
+  const [gastos,setGastos] = useState([]);
   const [error, setError] = useState('');
 
- 
+  const didMount = useRef(false);
+
+  useEffect(() => {
+    if (didMount.current) {
+      const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text('Reporte de Gastos', 10, 10);
+    doc.setFontSize(12);
+    doc.text(`Detalle de los gastos realizados`, 10, 20);
+    let count = 30
+    let total = 0
+    gastos.forEach(element => {
+      doc.text(`Monto de gasto: ${element.cantidad}`, 10,count);
+      doc.text(`Fecha del gasto: ${element.fecha_registro}`, 80,count)
+      total+=parseFloat(element.cantidad)
+      count+=10
+    });
+    doc.text(`Total: ${total}`, 10,count)
+    doc.save(`reporte_gastos.pdf`);
+    }
+    else didMount.current = true;
+    
+    
+  }, [gastos]);
 
   // Función para manejar la generación del PDF
   const generarPDF = () => {
@@ -22,20 +45,7 @@ const ReporteGastos = () => {
 
     setError('');
 
-    const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text('Reporte de Gastos', 10, 10);
-    doc.setFontSize(12);
-    doc.text(`Detalle de los gastos realizados`, 10, 20);
-    let count = 30
     
-    corral.forEach(element => {
-      doc.text(`Monto de gasto: ${gastos.cantidad}`, 10,count);
-      count+=10
-      doc.text(`Fecha del gasto: ${gastos.fecha_registro}`, 10,count)
-      count+=10
-    });
-    doc.save(`reporte_gastos.pdf`);
   };
 
   return (

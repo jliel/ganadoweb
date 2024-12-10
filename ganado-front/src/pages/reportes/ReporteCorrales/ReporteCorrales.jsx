@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import jsPDF from 'jspdf'; // Asegúrate de instalar jsPDF: npm install jspdf
-import CorralServices from '../../../services/GanadoServices';
+import GanadoServices from '../../../services/GanadoServices';
 
 const ReporteVentas = () => {
   const [idCorral, setIdCorral] = useState('');
@@ -8,21 +8,11 @@ const ReporteVentas = () => {
 
   const [corral, setcorral] = useState([]);
 
-  // Función para manejar la generación del PDF
-  const generarPDF = () => {
-    
-    CorralServices.getAll().then(res => {
-        setcorral(res.data);
-        console.log(corral)
-    })
-    .catch(err => {
-        console.log(err.message);
-        return
-    });
+  const didMount = useRef(false);
 
-    setError('');
-
-    const doc = new jsPDF();
+  useEffect(() => {
+    if (didMount.current) {
+      const doc = new jsPDF();
     doc.setFontSize(16);
     doc.text('Reporte de Ganado', 10, 10);
     doc.setFontSize(12);
@@ -31,11 +21,32 @@ const ReporteVentas = () => {
     
     corral.forEach(element => {
       doc.text(`Identificador del ganado: ${element.identificador}`, 10,count)
-      count+=10
-      doc.text(`Identificador del ganado: ${ganado.corral}`, 10,count)
+      doc.text(`Ingreso el doa: ${element.fecha_registro}`, 80,count)
       count+=10
     });
     doc.save(`reporte_ganado.pdf`);
+    }
+      else didMount.current = true;
+    
+    
+  }, [corral]);
+
+  // Función para manejar la generación del PDF
+  const generarPDF = () => {
+    
+    GanadoServices.getAll().then(res => {
+        setcorral(res.data);
+        console.log(corral)
+        
+    })
+    .catch(err => {
+        console.log(err.message);
+        return
+    });
+
+    setError('');
+
+    
   };
 
   return (
